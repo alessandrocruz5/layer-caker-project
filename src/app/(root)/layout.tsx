@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import { SanityLive } from "@/sanity/lib/live";
+import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,8 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      {children}
-      <SanityLive />
+      <section className="bg-white min-h-screen">
+        <Header />
+        {children}
+        <SanityLive />
+      </section>
     </>
   );
 }
